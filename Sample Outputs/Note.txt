@@ -1,0 +1,3 @@
+Each of these sample outputs is (from left to right) the input, ground truth and network output.
+
+The file names correspond to the experiment numbers in the 'Experiment Results' spreadsheet.
