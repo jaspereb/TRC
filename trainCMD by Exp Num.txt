@@ -1,8 +1,7 @@
+Referencing experiment numbers from 'Key Paper Sections'
+
 default 
 python3 main.py -a resnet50 -d upproj -m rgbd -s 100 -b 16 --sparsifier statsam --variable-focal --variable-scale --data nyudepthv2
-
-These commands correspond to the experiment numbers from the spreadsheet of results
-
 
 NYU
 1 python3 main.py -a resnet50 -d upproj -m rgb -b 16 --data nyudepthv2
@@ -52,12 +51,27 @@ Kitti
 NOTE: Kitti req change to resnet18, both architectures appear to be correct to the paper.
 NOTE: Should set --pixx 456 --pixy 114 to sample middle of image
 50 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --data kitti
+51 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --data kitti
+52 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-focal --data kitti
+53 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --variable-focal --data kitti
+54 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-scale --data kitti
+55 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --variable-scale --data kitti
+56 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-scale --variable-focal --data kitti
+57 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --variable-scale --variable-focal --data kitti
+
+%%%%%%%%
+THESE ARE THE OLD BUGGED COMMANDS, ONLY FOR REFERENCE
+50 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --data kitti
 51 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --data kitti
 52 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-focal --data kitti
 53 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --variable-focal --data kitti
 54 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-scale --data kitti
 55 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --variable-scale --data kitti
-
+With Pixx and Pixy set properly
+56 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --variable-scale --data kitti
+57 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --variable-focal --data kitti
+58 python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --pixx 456 --pixy 114 --data kitti
+%%%%%%%%
 CMD STACK:
 python3 main.py -a resnet18 -d upproj -m rgb -b 16 --data kitti && python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --data kitti && python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-focal --data kitti && python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --variable-focal --data kitti && python3 main.py -a resnet18 -d upproj -m rgb -b 16 --variable-scale --data kitti && python3 main.py -a resnet18 -d upproj -m rgbd -b 16 --sparsifier nearsam --variable-scale --data kitti
 
@@ -73,6 +87,8 @@ TRC
 
 CMD STACK:
 python3 main.py -a resnet50 -d upproj -m rgbd -b 3 --epochs 50 --data tof --tofType trcwide && python3 main.py -a resnet50 -d upproj -m rgb -b 3 --epochs 50 --data tof --tofType trcwide
+
+
 
 FP
 70 python3 main.py -a resnet50 -d upproj -m rgb -b 3 --epochs 50 --data tof --tofType flowerpower
@@ -103,6 +119,9 @@ python3 main.py -a resnet50 -d upproj -m rgb -b 3 --epochs 50 --crossTrain ~/rgb
 
 For 5 points spaced at radius 40 and 80 pix the locations in the 1/2 size image are
 x =
+
   114.0000   75.9577   90.4886  137.5114  152.0423  114.0000   37.9155   66.9772  161.0228  190.0845
+
 y =
+
   192.0000  164.3607  119.6393  119.6393  164.3607  232.0000  176.7214   87.2786   87.2786  176.7214
