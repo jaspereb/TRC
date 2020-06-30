@@ -1,5 +1,5 @@
 # TRC
-Supporting code and hardware designs for the paper on monocular depth prediction in agriculture [link goes here] The repository name comes from Time-of-flight + Rgb + Cnn (TRC). Network predictions for the NYUv2 dataset are shown in the 'Sample Outputs' directory.
+Supporting code and hardware designs for the paper on monocular depth prediction in the agricontrol conference https://doi.org/10.1016/j.ifacol.2019.12.565. The repository name comes from Time-of-flight + Rgb + Cnn (TRC). Network predictions for the NYUv2 dataset are shown in the 'Sample Outputs' directory.
 
 # Paper Information
 All of the results in the paper were generated using this code which is an adaptation of [Sparse to Dense](https://github.com/fangchangma/sparse-to-dense.pytorch) by Ma and Karaman (2018).
